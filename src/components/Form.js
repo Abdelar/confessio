@@ -15,14 +15,14 @@ export default class Form extends Component {
 	};
 
 	authorChanged = event => {
-		this.setState({ author: event.target.value });
+		this.setState({ author: event.target.value, success: '' });
 	};
 
 	tagChanged = event => {
-		this.setState({ tag: event.target.value });
+		this.setState({ tag: event.target.value, success: '' });
 	};
 	messageChanged = event => {
-		this.setState({ message: event.target.value });
+		this.setState({ message: event.target.value, success: '' });
 	};
 
 	addTag = () => {
@@ -82,7 +82,7 @@ export default class Form extends Component {
 				});
 			})
 			.catch(err => {
-				this.setState({ error: err.data.error, success: '' });
+				this.setState({ error: err.data.error, success: '', tag: '' });
 			})
 			.finally(() => {
 				this.setState({
@@ -90,6 +90,7 @@ export default class Form extends Component {
 					author: '',
 					tags: [],
 					loading: false,
+					tag: '',
 				});
 			});
 	};
@@ -98,7 +99,7 @@ export default class Form extends Component {
 		return (
 			<div className='form'>
 				<div className='input'>
-					<label>New message</label>
+					<label className='message-label'>New message</label>
 					<input
 						id='author'
 						type='text'
@@ -115,7 +116,7 @@ export default class Form extends Component {
 						placeholder='Your message...'></textarea>
 				</div>
 				<div className='controls'>
-					<label htmlFor='post'>Add up to 3 tags</label>
+					<label className='tags-label'>Add up to 3 tags</label>
 					{this.state.tags.length ? (
 						<div className='tags-wrapper'>
 							{this.state.tags.map(tag => (

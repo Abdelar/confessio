@@ -128,3 +128,15 @@ button[type='submit'] {
 	margin-top: 1em;
 	color: rgb(202, 96, 77);
 }
+
+@media screen and (max-width: 1200px) {
+	.form {
+		grid-template-columns: 1fr;
+	}
+	.tags-label {
+		margin: 1em 0;
+	}
+	textarea {
+		min-width: 80vw;
+	}
+} ;
