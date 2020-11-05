@@ -5,6 +5,7 @@
 *::after {
 	margin: 0;
 	padding: 0;
+	box-sizing: border-box;
 }
 
 :focus {
@@ -12,7 +13,6 @@
 }
 
 body {
-	box-sizing: border-box;
 	font-size: 16px;
 	color: #202030;
 	font-family: 'Montserrat', 'sans-serif';

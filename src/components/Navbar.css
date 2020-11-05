@@ -17,7 +17,7 @@
 }
 .navbar li {
 	margin-left: 2em;
-	transition: background-color 0.3s;
+	transition: background-color 0.3s ease-in-out;
 }
 .navbar li:first-child {
 	margin-right: auto;
