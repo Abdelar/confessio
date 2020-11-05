@@ -13,7 +13,22 @@
 
 body {
 	box-sizing: border-box;
+	font-size: 16px;
+	color: #202030;
 	font-family: 'Montserrat', 'sans-serif';
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+main {
+	width: 90vw;
+	max-width: 1200px;
+	margin: 0 auto;
+	margin-top: 5em;
+}
+.page {
+	margin: 0 1em;
+}
+::selection {
+	background-color: #b0a990;
+	color: #202030;
 }

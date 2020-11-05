@@ -1,5 +1,10 @@
 import React from 'react';
+import Form from '../components/Form';
 
 export default function home() {
-	return <div>home</div>;
+	return (
+		<>
+			<Form />
+		</>
+	);
 }
