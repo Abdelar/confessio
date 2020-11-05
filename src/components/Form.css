@@ -28,7 +28,8 @@
 }
 
 textarea,
-#tag-input {
+#tag-input,
+#author {
 	font-family: inherit;
 	font-size: 1rem;
 	padding: 1em;
@@ -39,10 +40,14 @@ textarea,
 	transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
+#author {
+	margin-bottom: 1em;
+}
+
 textarea {
 	width: 100%;
 	min-width: 500px;
-	height: 12em;
+	height: 10em;
 	resize: none;
 }
 
@@ -51,9 +56,10 @@ textarea {
 }
 
 textarea:focus,
-#tag-input:focus {
+#tag-input:focus,
+#author:focus {
 	background-color: white;
-	box-shadow: 2px 2px 5px 3px #20203041;
+	box-shadow: 2px 2px 5px 3px #b0a99050;
 }
 
 .tags-button,
@@ -113,6 +119,10 @@ button[type='submit'] {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+.success {
+	margin-top: 1em;
+	color: #39304a;
 }
 .error {
 	margin-top: 1em;

@@ -1,12 +1,21 @@
 import React, { Component } from 'react';
+
+import { createMessage } from '../api/api';
 import './Form.css';
 
 export default class Form extends Component {
 	state = {
+		loading: false,
 		message: '',
+		author: '',
 		tags: [],
 		tag: '',
 		error: '',
+		success: '',
+	};
+
+	authorChanged = event => {
+		this.setState({ author: event.target.value });
 	};
 
 	tagChanged = event => {
@@ -48,11 +57,56 @@ export default class Form extends Component {
 		this.setState({ tags: updatedTags });
 	};
 
+	submit = () => {
+		const { message, author, tags } = this.state;
+
+		if (message === '') {
+			return this.setState({
+				error: 'Please add a message before submitting!',
+			});
+		} else if (message.length > 1000) {
+			return this.setState({
+				error: 'The message is too long!',
+			});
+		} else if (author.length > 100) {
+			return this.setState({
+				error: 'The author name is too long!',
+			});
+		}
+		this.setState({ loading: true });
+		createMessage({ message, author, tags })
+			.then(() => {
+				this.setState({
+					success: 'Message saved Successfully',
+					error: '',
+				});
+			})
+			.catch(err => {
+				this.setState({ error: err.data.error, success: '' });
+			})
+			.finally(() => {
+				this.setState({
+					message: '',
+					author: '',
+					tags: [],
+					loading: false,
+				});
+			});
+	};
+
 	render() {
 		return (
 			<div className='form'>
 				<div className='input'>
-					<label htmlFor='message'>New message</label>
+					<label>New message</label>
+					<input
+						id='author'
+						type='text'
+						name='author'
+						onChange={this.authorChanged}
+						value={this.state.author}
+						placeholder='Nick name'
+					/>
 					<textarea
 						name='post'
 						id='message'
@@ -62,17 +116,19 @@ export default class Form extends Component {
 				</div>
 				<div className='controls'>
 					<label htmlFor='post'>Add up to 3 tags</label>
-					<div className='tags-wrapper'>
-						{this.state.tags.map(tag => (
-							<div
-								key={tag}
-								className='tag'
-								onClick={() => this.removeTag(tag)}>
-								<span className='remove'>Remove</span>
-								{tag}
-							</div>
-						))}
-					</div>
+					{this.state.tags.length ? (
+						<div className='tags-wrapper'>
+							{this.state.tags.map(tag => (
+								<div
+									key={tag}
+									className='tag'
+									onClick={() => this.removeTag(tag)}>
+									<span className='remove'>Remove</span>
+									{tag}
+								</div>
+							))}
+						</div>
+					) : null}
 					<div className='tags'>
 						<input
 							id='tag-input'
@@ -86,11 +142,15 @@ export default class Form extends Component {
 							Add
 						</button>
 					</div>
-					<button type='submit' className='submit'>
-						Submit
+					<button
+						type='submit'
+						className='submit'
+						onClick={this.submit}
+						disabled={this.state.loading}>
+						{this.state.loading ? 'sending..' : 'Submit'}
 					</button>
 				</div>
-				<div></div>
+				<div className='success'>{this.state.success}</div>
 				<div className='error'>{this.state.error}</div>
 			</div>
 		);
