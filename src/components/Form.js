@@ -22,7 +22,7 @@ export default class Form extends Component {
 			this.setState({
 				error: 'Empty tag not allowed!',
 			});
-		} else if (tag.length >= 15) {
+		} else if (tag.length >= 17) {
 			this.setState({
 				error: 'Tag too long!',
 			});
@@ -49,7 +49,10 @@ export default class Form extends Component {
 			<div className='form'>
 				<div className='input'>
 					<label htmlFor='message'>New message</label>
-					<textarea name='post' id='message'></textarea>
+					<textarea
+						name='post'
+						id='message'
+						placeholder='Your message...'></textarea>
 				</div>
 				<div className='controls'>
 					<label htmlFor='post'>Add up to 3 tags</label>
@@ -71,6 +74,7 @@ export default class Form extends Component {
 							name='post'
 							onChange={this.tagChanged}
 							value={this.state.tag}
+							placeholder='tag'
 						/>
 						<button className='tags-button' onClick={this.addTag}>
 							Add
