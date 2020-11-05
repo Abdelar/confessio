@@ -3,6 +3,7 @@ import './Form.css';
 
 export default class Form extends Component {
 	state = {
+		message: '',
 		tags: [],
 		tag: '',
 		error: '',
@@ -10,6 +11,9 @@ export default class Form extends Component {
 
 	tagChanged = event => {
 		this.setState({ tag: event.target.value });
+	};
+	messageChanged = event => {
+		this.setState({ message: event.target.value });
 	};
 
 	addTag = () => {
@@ -52,6 +56,8 @@ export default class Form extends Component {
 					<textarea
 						name='post'
 						id='message'
+						onChange={this.messageChanged}
+						value={this.state.message}
 						placeholder='Your message...'></textarea>
 				</div>
 				<div className='controls'>
@@ -74,7 +80,7 @@ export default class Form extends Component {
 							name='post'
 							onChange={this.tagChanged}
 							value={this.state.tag}
-							placeholder='tag'
+							placeholder='New tag'
 						/>
 						<button className='tags-button' onClick={this.addTag}>
 							Add
