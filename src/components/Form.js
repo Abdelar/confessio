@@ -77,12 +77,16 @@ export default class Form extends Component {
 		createMessage({ message, author, tags })
 			.then(() => {
 				this.setState({
-					success: 'Message saved Successfully',
+					success: 'Message saved Successfully.',
 					error: '',
 				});
 			})
 			.catch(err => {
-				this.setState({ error: err.data.error, success: '', tag: '' });
+				this.setState({
+					error: "An error occurred, we couldn't save this message.",
+					success: '',
+					tag: '',
+				});
 			})
 			.finally(() => {
 				this.setState({
