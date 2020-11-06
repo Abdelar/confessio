@@ -46,7 +46,7 @@ textarea,
 
 textarea {
 	width: 100%;
-	min-width: 500px;
+	/* min-width: 500px; */
 	height: 10em;
 	resize: none;
 }
@@ -135,8 +135,5 @@ button[type='submit'] {
 	}
 	.tags-label {
 		margin: 1em 0;
-	}
-	textarea {
-		min-width: 80vw;
 	}
 } ;
