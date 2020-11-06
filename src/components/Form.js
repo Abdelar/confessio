@@ -61,6 +61,8 @@ export default class Form extends Component {
 	submit = () => {
 		const { message, author, tags } = this.state;
 
+		this.setState({ success: '' });
+
 		if (message === '') {
 			return this.setState({
 				error: 'Please add a message before submitting!',
@@ -78,7 +80,7 @@ export default class Form extends Component {
 		createMessage({ message, author, tags })
 			.then(() => {
 				this.setState({
-					success: 'Message saved Successfully.',
+					success: 'Message saved Successfully',
 					error: '',
 				});
 			})
@@ -101,6 +103,7 @@ export default class Form extends Component {
 	};
 
 	render() {
+		const { tags, tag, loading, error, message, author, success } = this.state;
 		return (
 			<div className='form'>
 				<div className='input'>
@@ -110,21 +113,21 @@ export default class Form extends Component {
 						type='text'
 						name='author'
 						onChange={this.authorChanged}
-						value={this.state.author}
+						value={author}
 						placeholder='Nick name'
 					/>
 					<textarea
 						name='post'
 						id='message'
 						onChange={this.messageChanged}
-						value={this.state.message}
+						value={message}
 						placeholder='Your message...'></textarea>
 				</div>
 				<div className='controls'>
 					<label className='tags-label'>Add up to 3 tags</label>
-					{this.state.tags.length ? (
+					{tags.length ? (
 						<div className='tags-wrapper'>
-							{this.state.tags.map(tag => (
+							{tags.map(tag => (
 								<div
 									key={tag}
 									className='tag'
@@ -143,7 +146,7 @@ export default class Form extends Component {
 							type='text'
 							name='post'
 							onChange={this.tagChanged}
-							value={this.state.tag}
+							value={tag}
 							placeholder='New tag'
 						/>
 						<button className='tags-button' onClick={this.addTag}>
@@ -154,16 +157,18 @@ export default class Form extends Component {
 						type='submit'
 						className='submit'
 						onClick={this.submit}
-						disabled={this.state.loading}>
-						{this.state.loading ? (
+						disabled={loading}>
+						{loading ? (
 							<FontAwesomeIcon icon='spinner' className='loader' />
 						) : (
 							'Submit'
 						)}
 					</button>
 				</div>
-				<div className='success'>{this.state.success}</div>
-				<div className='error'>{this.state.error}</div>
+				<div className='success'>
+					{success} {success && <FontAwesomeIcon icon='thumbs-up' />}
+				</div>
+				<div className='error'>{error}</div>
 			</div>
 		);
 	}
