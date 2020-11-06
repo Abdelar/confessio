@@ -13,8 +13,13 @@
 	grid-template-columns: repeat(auto-fit, 23vw);
 }
 
-.no-messages {
+.no-messages,
+.error-message {
 	text-align: center;
+}
+
+.error-message {
+	color: rgb(202, 96, 77);
 }
 
 @media screen and (max-width: 1200px) {
