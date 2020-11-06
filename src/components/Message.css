@@ -1,0 +1,47 @@
+.message {
+	border: 1px #202030 solid;
+	padding: 1em;
+	color: #202030;
+	font-weight: 500;
+	letter-spacing: 0.1em;
+	border-radius: 0.2em;
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+}
+.message > * {
+	margin-bottom: 1em;
+}
+
+.author {
+	margin-bottom: 0.6em;
+}
+
+.message > *:last-child {
+	margin-top: auto;
+	margin-bottom: 0;
+}
+.author,
+.date {
+	display: flex;
+	color: #b0a990;
+}
+
+.author-icon,
+.date-icon {
+	margin-right: 0.4em;
+}
+
+.tag-span {
+	background-color: rgb(32, 32, 48);
+	font-size: 0.9rem;
+	margin-right: 0.8em;
+	color: white;
+	text-transform: lowercase;
+	padding: 0.1em 0.3em;
+	border-radius: 0.2em;
+	text-align: center;
+}
+.tag-span:last-child {
+	margin-right: 0;
+}

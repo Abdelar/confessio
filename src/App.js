@@ -4,7 +4,9 @@ import {
 	faPlus,
 	faSpinner,
 	faTrash,
+	faClock,
 	faThumbsUp,
+	faUser,
 } from '@fortawesome/free-solid-svg-icons';
 
 import Home from './pages/home';
@@ -14,7 +16,7 @@ import Navbar from './components/Navbar';
 
 import './App.css';
 
-library.add(faPlus, faSpinner, faTrash, faThumbsUp);
+library.add(faPlus, faSpinner, faTrash, faThumbsUp, faUser, faClock);
 
 function App() {
 	return (

@@ -1,0 +1,29 @@
+.messages {
+	margin-bottom: 1em;
+}
+.leading {
+	text-align: center;
+	margin: 1.4em 0;
+}
+
+.cards {
+	display: grid;
+	gap: 1em;
+	justify-content: center;
+	grid-template-columns: repeat(auto-fit, 23vw);
+}
+
+.no-messages {
+	text-align: center;
+}
+
+@media screen and (max-width: 1200px) {
+	.cards {
+		grid-template-columns: repeat(auto-fit, 42vw);
+	}
+}
+@media screen and (max-width: 790px) {
+	.cards {
+		grid-template-columns: repeat(auto-fit, 90vw);
+	}
+}
