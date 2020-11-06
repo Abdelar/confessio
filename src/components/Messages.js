@@ -17,7 +17,6 @@ export default class Messages extends Component {
 		});
 		getMessages()
 			.then(res => {
-				console.log(res.data);
 				this.setState({
 					messages: res.data,
 				});

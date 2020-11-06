@@ -7,7 +7,7 @@ import './Message.css';
 export default function Message({ message }) {
 	return (
 		<div className='message'>
-			<p className='message-body'>{message.message}</p>
+			<p className='message-body'>{message.body}</p>
 
 			<div>
 				{message.tags &&

@@ -77,7 +77,12 @@ export default class Form extends Component {
 			});
 		}
 		this.setState({ loading: true });
-		createMessage({ message, author, tags })
+		const post = {
+			body: message,
+			author,
+			tags,
+		};
+		createMessage(post)
 			.then(() => {
 				this.setState({
 					success: 'Message saved Successfully',
