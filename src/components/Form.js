@@ -15,14 +15,14 @@ export default class Form extends Component {
 	};
 
 	authorChanged = event => {
-		this.setState({ author: event.target.value, success: '' });
+		this.setState({ author: event.target.value, success: '', error: '' });
 	};
 
 	tagChanged = event => {
-		this.setState({ tag: event.target.value, success: '' });
+		this.setState({ tag: event.target.value, success: '', error: '' });
 	};
 	messageChanged = event => {
-		this.setState({ message: event.target.value, success: '' });
+		this.setState({ message: event.target.value, success: '', error: '' });
 	};
 
 	addTag = () => {
@@ -148,7 +148,7 @@ export default class Form extends Component {
 						className='submit'
 						onClick={this.submit}
 						disabled={this.state.loading}>
-						{this.state.loading ? 'sending..' : 'Submit'}
+						{this.state.loading ? 'Saving..' : 'Submit'}
 					</button>
 				</div>
 				<div className='success'>{this.state.success}</div>
