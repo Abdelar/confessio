@@ -3,9 +3,9 @@
 	color: #202030;
 	font-weight: 500;
 	letter-spacing: 0.1em;
-	border: 1px solid #20203060;
+	border: 1px solid #b0a990;
 	border-radius: 0.2em;
-	border-top: 6px solid #20203060;
+	border-top: 6px solid #b0a990;
 	background-color: white;
 	display: flex;
 	flex-direction: column;
@@ -16,6 +16,7 @@
 
 .author {
 	margin-bottom: 0.6em;
+	text-transform: capitalize;
 }
 
 .message > *:last-child {
