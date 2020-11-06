@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { createMessage } from '../api/api';
 import './Form.css';
@@ -128,7 +129,9 @@ export default class Form extends Component {
 									key={tag}
 									className='tag'
 									onClick={() => this.removeTag(tag)}>
-									<span className='remove'>Remove</span>
+									<span className='remove'>
+										<FontAwesomeIcon icon='trash' />
+									</span>
 									{tag}
 								</div>
 							))}
@@ -144,7 +147,7 @@ export default class Form extends Component {
 							placeholder='New tag'
 						/>
 						<button className='tags-button' onClick={this.addTag}>
-							Add
+							<FontAwesomeIcon icon='plus' />
 						</button>
 					</div>
 					<button
@@ -152,7 +155,11 @@ export default class Form extends Component {
 						className='submit'
 						onClick={this.submit}
 						disabled={this.state.loading}>
-						{this.state.loading ? 'Saving..' : 'Submit'}
+						{this.state.loading ? (
+							<FontAwesomeIcon icon='spinner' className='loader' />
+						) : (
+							'Submit'
+						)}
 					</button>
 				</div>
 				<div className='success'>{this.state.success}</div>

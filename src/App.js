@@ -1,4 +1,6 @@
 import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faPlus, faSpinner, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 import Home from './pages/home';
 import About from './pages/about';
@@ -6,6 +8,8 @@ import Contact from './pages/contact';
 import Navbar from './components/Navbar';
 
 import './App.css';
+
+library.add(faPlus, faSpinner, faTrash);
 
 function App() {
 	return (

@@ -129,6 +129,16 @@ button[type='submit'] {
 	color: rgb(202, 96, 77);
 }
 
+.loader {
+	animation: 2s linear 0s infinite running rotate;
+}
+
+@keyframes rotate {
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
 @media screen and (max-width: 1200px) {
 	.form {
 		grid-template-columns: 1fr;
