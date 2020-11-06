@@ -4,5 +4,5 @@ export const createMessage = message => {
 	return axios.post('/post', message);
 };
 export const getMessages = () => {
-	return axios.get('/postss');
+	return axios.get('/posts');
 };
