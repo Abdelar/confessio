@@ -137,7 +137,7 @@ export default class Form extends Component {
 									key={tag}
 									className='tag'
 									onClick={() => this.removeTag(tag)}>
-									<span className='remove'>
+									<span title='Remove this tag' className='remove'>
 										<FontAwesomeIcon icon='trash' />
 									</span>
 									{tag}
@@ -154,13 +154,17 @@ export default class Form extends Component {
 							value={tag}
 							placeholder='New tag'
 						/>
-						<button className='tags-button' onClick={this.addTag}>
+						<button
+							title='Add tag'
+							className='tags-button'
+							onClick={this.addTag}>
 							<FontAwesomeIcon icon='plus' />
 						</button>
 					</div>
 					<button
 						type='submit'
 						className='submit'
+						title='Submit'
 						onClick={this.submit}
 						disabled={loading}>
 						{loading ? (
