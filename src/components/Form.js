@@ -83,11 +83,12 @@ export default class Form extends Component {
 			tags,
 		};
 		createMessage(post)
-			.then(() => {
+			.then(doc => {
 				this.setState({
 					success: 'Message saved Successfully',
 					error: '',
 				});
+				this.props.pushNewMessage(doc.data);
 			})
 			.catch(err => {
 				this.setState({

@@ -6,3 +6,7 @@ export const createMessage = message => {
 export const getMessages = () => {
 	return axios.get('/posts');
 };
+
+export const getMessagesByTag = tag => {
+	return axios.get(`/posts/${tag}`);
+};
