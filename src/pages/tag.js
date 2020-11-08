@@ -1,30 +1,37 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link } from 'react-router-dom';
 
 import { getMessagesByTag } from '../api/api';
 import Messages from '../components/Messages';
 
-export default class Tag extends Component {
-	state = {
-		taggedMessages: [],
-	};
-	componentDidMount() {
-		getMessagesByTag(this.props.match.params.tag).then(res =>
-			this.setState({ taggedMessages: res.data })
-		);
-	}
+const Tag = ({ match }) => {
+	const [taggedMessages, setTaggedMessages] = useState([]);
+	const [loading, setLoading] = useState(false);
+	const [error, setError] = useState('');
+	useEffect(() => {
+		setLoading(true);
+		getMessagesByTag(match.params.tag)
+			.then(res => {
+				setTaggedMessages(res.data);
+			})
+			.catch(err => setError(err.message))
+			.finally(() => setLoading(false));
+	}, [match.params.tag]);
 
-	render() {
-		const {
-			match: {
-				params: { tag },
-			},
-		} = this.props;
-		const { taggedMessages } = this.state;
-		return (
-			<>
-				<h1>All posts with tag: {tag}</h1>
-				<Messages messages={taggedMessages} setMessages={this.setMessages} />
-			</>
-		);
-	}
-}
+	return (
+		<>
+			<h1>
+				{taggedMessages.length} messages tagged with{' '}
+				<FontAwesomeIcon icon='quote-left' size='xs' /> {match.params.tag}{' '}
+				<FontAwesomeIcon icon='quote-right' size='xs' />
+			</h1>
+			<Messages messages={taggedMessages} error={error} loading={loading} />
+			<div>
+				<Link to='/'>Home</Link>
+			</div>
+		</>
+	);
+};
+
+export default Tag;

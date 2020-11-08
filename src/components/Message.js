@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import { toDate } from '../util/util';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -13,7 +15,9 @@ export default function Message({ message }) {
 				{message.tags &&
 					message.tags.map(tag => (
 						<span key={tag} className='tag-span'>
-							{tag}
+							<Link className='tag-link' to={'/tag/' + tag}>
+								{tag}
+							</Link>
 						</span>
 					))}
 			</div>

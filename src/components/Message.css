@@ -36,6 +36,21 @@
 
 .tag-span {
 	background-color: rgb(32, 32, 48);
+	margin-right: 0.8em;
+	padding: 0.1em 0.3em;
+	border-radius: 0.2em;
+}
+
+.tag-link {
+	text-align: center;
+	text-decoration: none;
+	color: white;
+	cursor: pointer;
+	font-family: monospace;
+}
+
+.tag-span {
+	background-color: rgb(32, 32, 48);
 	font-size: 0.9rem;
 	margin-right: 0.8em;
 	color: white;
@@ -44,6 +59,7 @@
 	border-radius: 0.2em;
 	text-align: center;
 }
+
 .tag-span:last-child {
 	margin-right: 0;
 }

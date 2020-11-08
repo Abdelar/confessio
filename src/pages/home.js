@@ -18,13 +18,10 @@ export default class home extends Component {
 			.then(res => {
 				this.setState({ messages: res.data });
 			})
-			.catch(() => this.setState({ error: "Can't fetch data!" }))
+			.catch(err => this.setState({ error: err.message }))
 			.finally(() => this.setState({ loading: false }));
 	}
 
-	setMessages = messages => {
-		this.setState({ messages: messages });
-	};
 	pushNewMessage = message => {
 		const updatedMessages = [message, ...this.state.messages];
 		this.setState({ messages: updatedMessages });

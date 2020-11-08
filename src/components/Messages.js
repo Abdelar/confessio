@@ -1,4 +1,5 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import Message from './Message';
 
@@ -8,16 +9,20 @@ export default function Messages({ messages, loading, error }) {
 	return (
 		<div className='messages'>
 			<h1 className='leading'>Messages</h1>
-			{messages.length && !loading ? (
+			{messages.length > 0 ? (
 				<div className='cards'>
 					{messages.map(message => (
 						<Message key={message.id} message={message} />
 					))}
 				</div>
-			) : !error ? (
-				<div className='no-messages'>No messages!</div>
-			) : (
+			) : loading ? (
+				<div className='loading-message'>
+					<FontAwesomeIcon icon='spinner' className='loader' />
+				</div>
+			) : error ? (
 				<div className='error-message'>{error}</div>
+			) : (
+				<div className='no-messages'>No messages!</div>
 			)}
 		</div>
 	);

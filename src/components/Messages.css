@@ -14,7 +14,8 @@
 }
 
 .no-messages,
-.error-message {
+.error-message,
+.loading-message {
 	text-align: center;
 }
 

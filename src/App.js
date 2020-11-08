@@ -6,6 +6,8 @@ import {
 	faTrash,
 	faClock,
 	faThumbsUp,
+	faQuoteLeft,
+	faQuoteRight,
 	faUser,
 } from '@fortawesome/free-solid-svg-icons';
 
@@ -18,7 +20,16 @@ import Navbar from './components/Navbar';
 
 import './App.css';
 
-library.add(faPlus, faSpinner, faTrash, faThumbsUp, faUser, faClock);
+library.add(
+	faPlus,
+	faSpinner,
+	faTrash,
+	faThumbsUp,
+	faUser,
+	faClock,
+	faQuoteLeft,
+	faQuoteRight
+);
 
 function App() {
 	return (
