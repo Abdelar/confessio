@@ -1,0 +1,20 @@
+.load-more {
+	margin-bottom: 1em;
+	display: flex;
+	justify-content: center;
+}
+
+.load-more button {
+	background-color: #202030;
+	color: white;
+	transition: background-color 0.3s;
+	padding: 0.4em 1em;
+	border-radius: 0.2em;
+	border: none;
+	cursor: pointer;
+}
+
+.load-more button:hover,
+.load-more button:focus {
+	background-color: #39304a;
+}

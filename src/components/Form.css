@@ -80,7 +80,9 @@ button[type='submit'] {
 }
 
 .tags-button:hover,
-button[type='submit']:hover {
+button[type='submit']:hover,
+.tags-button:focus,
+button[type='submit']:focus {
 	background-color: #39304a;
 }
 

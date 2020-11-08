@@ -3,6 +3,7 @@ import Form from '../components/Form';
 import Intro from '../components/Intro';
 import { getMessages } from '../api/api';
 import Messages from '../components/Messages';
+import LoadMore from '../components/LoadMore';
 
 export default class home extends Component {
 	state = {
@@ -27,6 +28,10 @@ export default class home extends Component {
 		this.setState({ messages: updatedMessages });
 	};
 
+	loadMore = () => {
+		console.log('load more');
+	};
+
 	render() {
 		const { messages, loading, error } = this.state;
 		return (
@@ -34,6 +39,7 @@ export default class home extends Component {
 				<Intro />
 				<Form pushNewMessage={this.pushNewMessage} />
 				<Messages messages={messages} loading={loading} error={error} />
+				<LoadMore loadMore={this.loadMore} />
 			</>
 		);
 	}
