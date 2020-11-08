@@ -71,11 +71,17 @@ button[type='submit'] {
 	font-size: inherit;
 	border-radius: 0.2em;
 	cursor: pointer;
-	background-color:  #202030;
+	background-color: #202030;
+	transition: background-color 0.3s;
 }
 
 button[type='submit'] {
 	width: 100%;
+}
+
+.tags-button:hover,
+button[type='submit']:hover {
+	background-color: #39304a;
 }
 
 .tags-wrapper {
