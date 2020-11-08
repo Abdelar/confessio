@@ -119,6 +119,7 @@ export default class Form extends Component {
 						type='text'
 						name='author'
 						onChange={this.authorChanged}
+						autoComplete='off'
 						value={author}
 						placeholder='Nick name'
 					/>
@@ -127,6 +128,7 @@ export default class Form extends Component {
 						id='message'
 						onChange={this.messageChanged}
 						value={message}
+						autoComplete='off'
 						placeholder='Your message...'></textarea>
 				</div>
 				<div className='controls'>
@@ -153,6 +155,7 @@ export default class Form extends Component {
 							name='post'
 							onChange={this.tagChanged}
 							value={tag}
+							autoComplete='off'
 							placeholder='New tag'
 						/>
 						<button
