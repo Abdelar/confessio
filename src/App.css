@@ -33,6 +33,28 @@ main {
 	color: #202030;
 }
 
+/* scrollbar */
+
+/* width */
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: #b0a9906b;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #202030;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #39304a;
+}
+
 @media screen and (max-width: 320px) {
 	main {
 		width: 100vw;

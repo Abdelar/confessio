@@ -113,7 +113,7 @@ export default class Form extends Component {
 		return (
 			<div className='form'>
 				<div className='input'>
-					<label className='message-label'>New message</label>
+					<label className='message-label'>Tell the world about you</label>
 					<input
 						id='author'
 						type='text'
