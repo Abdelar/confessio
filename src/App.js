@@ -9,6 +9,7 @@ import {
 	faQuoteLeft,
 	faQuoteRight,
 	faUser,
+	faAngleLeft,
 } from '@fortawesome/free-solid-svg-icons';
 
 import Home from './pages/home';
@@ -28,7 +29,8 @@ library.add(
 	faUser,
 	faClock,
 	faQuoteLeft,
-	faQuoteRight
+	faQuoteRight,
+	faAngleLeft
 );
 
 function App() {

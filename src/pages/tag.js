@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 import { getMessagesByTag } from '../api/api';
 import Messages from '../components/Messages';
+import './tag.css';
 
 const Tag = ({ match }) => {
 	const [taggedMessages, setTaggedMessages] = useState([]);
@@ -28,7 +29,9 @@ const Tag = ({ match }) => {
 			</h1>
 			<Messages messages={taggedMessages} error={error} loading={loading} />
 			<div>
-				<Link to='/'>Home</Link>
+				<Link to='/' className='back-home'>
+					<FontAwesomeIcon icon='angle-left' /> Home
+				</Link>
 			</div>
 		</>
 	);
