@@ -34,37 +34,33 @@
 	margin-right: 0.4em;
 }
 
-.tag-span {
-	background-color: rgb(32, 32, 48);
-	margin-right: 0.8em;
-	padding: 0.1em 0.3em;
-	border-radius: 0.2em;
-	transition: background-color 0.3s;
-}
-
-.tag-span:hover {
-	background-color: #39304a;
-}
-
 .tag-link {
+	padding: 0.2em 0.3em;
 	text-align: center;
 	text-decoration: none;
 	color: white;
 	cursor: pointer;
 	font-family: monospace;
-}
-
-.tag-span {
 	background-color: rgb(32, 32, 48);
-	font-size: 0.9rem;
-	margin-right: 0.8em;
-	color: white;
-	text-transform: lowercase;
-	padding: 0.1em 0.3em;
 	border-radius: 0.2em;
+	margin-right: 0.4em;
+	margin-bottom: 0.4em;
+	text-transform: lowercase;
 	text-align: center;
+	font-size: 0.9rem;
+	transition: background-color 0.3s;
 }
 
-.tag-span:last-child {
+.tag-link:hover {
+	background-color: #39304a;
+}
+.tag-link:last-child {
 	margin-right: 0;
+	margin-bottom: 1em;
+}
+
+.tags-section {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 0;
 }

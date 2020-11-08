@@ -10,17 +10,15 @@ export default function Message({ message }) {
 	return (
 		<div className='message'>
 			<p className='message-body'>{message.body}</p>
-
-			<div>
-				{message.tags &&
-					message.tags.map(tag => (
-						<span key={tag} className='tag-span'>
-							<Link className='tag-link' to={'/tag/' + tag}>
-								{tag}
-							</Link>
-						</span>
+			{message.tags && (
+				<div className='tags-section'>
+					{message.tags.map(tag => (
+						<Link key={tag} className='tag-link' to={'/tag/' + tag}>
+							{tag}
+						</Link>
 					))}
-			</div>
+				</div>
+			)}
 			<div>
 				<p className='author'>
 					<FontAwesomeIcon icon='user' className='author-icon' />
