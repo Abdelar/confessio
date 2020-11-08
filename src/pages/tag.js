@@ -22,12 +22,17 @@ const Tag = ({ match }) => {
 
 	return (
 		<>
-			<h1>
-				{taggedMessages.length} messages tagged with{' '}
-				<FontAwesomeIcon icon='quote-left' size='xs' /> {match.params.tag}{' '}
+			<h1 className='tagCont'>
+				{taggedMessages.length} message{taggedMessages.length > 1 && 's'} tagged
+				with <FontAwesomeIcon icon='quote-left' size='xs' /> {match.params.tag}{' '}
 				<FontAwesomeIcon icon='quote-right' size='xs' />
 			</h1>
-			<Messages messages={taggedMessages} error={error} loading={loading} />
+			<Messages
+				messages={taggedMessages}
+				error={error}
+				loading={loading}
+				isTagPage={true}
+			/>
 			<div>
 				<Link to='/' className='back-home'>
 					<FontAwesomeIcon icon='angle-left' /> Home

@@ -5,10 +5,10 @@ import Message from './Message';
 
 import './Messages.css';
 
-export default function Messages({ messages, loading, error }) {
+export default function Messages({ messages, loading, error, isTagPage }) {
 	return (
 		<div className='messages'>
-			<h1 className='leading'>Messages</h1>
+			{!isTagPage && <h1 className='leading'>Messages</h1>}
 			{messages.length > 0 ? (
 				<div className='cards'>
 					{messages.map(message => (
