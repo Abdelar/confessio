@@ -15,15 +15,15 @@ export default function Messages({ messages, loading, error, isTagPage }) {
 						<Message key={message.id} message={message} />
 					))}
 				</div>
-			) : loading ? (
+			) : (
+				!loading && !error && <div className='no-messages'>No messages!</div>
+			)}
+			{loading && (
 				<div className='loading-message'>
 					<FontAwesomeIcon icon='spinner' className='loader' />
 				</div>
-			) : error ? (
-				<div className='error-message'>{error}</div>
-			) : (
-				<div className='no-messages'>No messages!</div>
 			)}
+			{error && <div className='error-message'>{error}</div>}
 		</div>
 	);
 }

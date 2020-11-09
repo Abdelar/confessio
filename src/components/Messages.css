@@ -17,6 +17,7 @@
 .error-message,
 .loading-message {
 	text-align: center;
+	margin-top: 1em;
 }
 
 .error-message {

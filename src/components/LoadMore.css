@@ -12,6 +12,7 @@
 	border-radius: 0.2em;
 	border: none;
 	cursor: pointer;
+	font-family: inherit;
 }
 
 .load-more button:hover,

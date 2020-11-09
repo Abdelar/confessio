@@ -10,6 +10,7 @@ export default class home extends Component {
 		messages: [],
 		loading: true,
 		error: '',
+		more: true,
 	};
 	componentDidMount() {
 		this.setState({
@@ -29,17 +30,34 @@ export default class home extends Component {
 	};
 
 	loadMore = () => {
-		console.log('load more');
+		const perPage = 12;
+		this.setState({
+			loading: true,
+		});
+		const { messages } = this.state;
+		getMessages(messages.length > 0 ? messages[messages.length - 1].id : null)
+			.then(res => {
+				const updatedMessages = [...messages, ...res.data];
+				console.log(res.data.length === perPage);
+				this.setState({
+					messages: updatedMessages,
+					more: res.data.length === perPage,
+				});
+			})
+			.catch(err => this.setState({ error: err.message }))
+			.finally(() => this.setState({ loading: false }));
 	};
 
 	render() {
-		const { messages, loading, error } = this.state;
+		const { messages, loading, error, more } = this.state;
 		return (
 			<>
 				<Intro />
 				<Form pushNewMessage={this.pushNewMessage} />
 				<Messages messages={messages} loading={loading} error={error} />
-				<LoadMore loadMore={this.loadMore} />
+				{more && !loading && messages.length >= 12 && (
+					<LoadMore loadMore={this.loadMore} />
+				)}
 			</>
 		);
 	}
