@@ -23,9 +23,9 @@ const Tag = ({ match }) => {
 	return (
 		<>
 			<h1 className='tagCont'>
-				{taggedMessages.length} message{taggedMessages.length > 1 && 's'} tagged
-				with <FontAwesomeIcon icon='quote-left' size='xs' /> {match.params.tag}{' '}
-				<FontAwesomeIcon icon='quote-right' size='xs' />
+				{taggedMessages.length} confession{taggedMessages.length > 1 && 's'}{' '}
+				tagged with <FontAwesomeIcon icon='quote-left' size='xs' />{' '}
+				{match.params.tag} <FontAwesomeIcon icon='quote-right' size='xs' />
 			</h1>
 			<Messages
 				messages={taggedMessages}

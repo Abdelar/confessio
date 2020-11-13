@@ -6,8 +6,9 @@ export default function Intro() {
 	return (
 		<div className='intro'>
 			<p className='paragraph'>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
-				consectetur modi rem quibusdam
+				Everyone needs a bit of mental and emotional release from time to time.
+				If the time is now, head on over to our online confessional and let some
+				of what troubles you out. It costs nothing and comes without penance.
 			</p>
 		</div>
 	);

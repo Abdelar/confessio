@@ -113,7 +113,9 @@ export default class Form extends Component {
 		return (
 			<div className='form'>
 				<div className='input'>
-					<label className='message-label'>Tell the world about you</label>
+					<label className='message-label'>
+						What's your confession, Let's hear it.
+					</label>
 					<input
 						id='author'
 						type='text'
@@ -121,7 +123,7 @@ export default class Form extends Component {
 						onChange={this.authorChanged}
 						autoComplete='off'
 						value={author}
-						placeholder='Nick name'
+						placeholder='Your name (Optional)'
 					/>
 					<textarea
 						name='post'
@@ -129,7 +131,7 @@ export default class Form extends Component {
 						onChange={this.messageChanged}
 						value={message}
 						autoComplete='off'
-						placeholder='Your message...'></textarea>
+						placeholder='Your confession'></textarea>
 				</div>
 				<div className='controls'>
 					<label className='tags-label'>Add up to 3 tags</label>
