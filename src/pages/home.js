@@ -15,10 +15,11 @@ export default class home extends Component {
 	componentDidMount() {
 		this.setState({
 			loading: true,
+			error: '',
 		});
 		getMessages()
 			.then(res => {
-				this.setState({ messages: res.data });
+				this.setState({ messages: res.data, error: '' });
 			})
 			.catch(err => this.setState({ error: err.message }))
 			.finally(() => this.setState({ loading: false }));
@@ -38,10 +39,10 @@ export default class home extends Component {
 		getMessages(messages.length > 0 ? messages[messages.length - 1].id : null)
 			.then(res => {
 				const updatedMessages = [...messages, ...res.data];
-				console.log(res.data.length === perPage);
 				this.setState({
 					messages: updatedMessages,
 					more: res.data.length === perPage,
+					error: '',
 				});
 			})
 			.catch(err => this.setState({ error: err.message }))
