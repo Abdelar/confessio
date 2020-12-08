@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/confessio/static/css/main.cc4a08a7.chunk.css",
+    "main.js": "/confessio/static/js/main.f56d3a5e.chunk.js",
+    "main.js.map": "/confessio/static/js/main.f56d3a5e.chunk.js.map",
+    "runtime-main.js": "/confessio/static/js/runtime-main.ec520d98.js",
+    "runtime-main.js.map": "/confessio/static/js/runtime-main.ec520d98.js.map",
+    "static/js/2.d16fde2c.chunk.js": "/confessio/static/js/2.d16fde2c.chunk.js",
+    "static/js/2.d16fde2c.chunk.js.map": "/confessio/static/js/2.d16fde2c.chunk.js.map",
+    "index.html": "/confessio/index.html",
+    "static/css/main.cc4a08a7.chunk.css.map": "/confessio/static/css/main.cc4a08a7.chunk.css.map",
+    "static/js/2.d16fde2c.chunk.js.LICENSE.txt": "/confessio/static/js/2.d16fde2c.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ec520d98.js",
+    "static/js/2.d16fde2c.chunk.js",
+    "static/css/main.cc4a08a7.chunk.css",
+    "static/js/main.f56d3a5e.chunk.js"
+  ]
+}
