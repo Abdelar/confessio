@@ -29,6 +29,8 @@ export default function About() {
 				embarrassing. just say it out loud. this is what the website is all
 				about. a place to simply let it out…
 			</p>
+			<p className='signature name'>By Abdellatif Elaroussi</p>
+			<pre className='signature domain'>abdell.tech</pre>
 		</div>
 	);
 }
