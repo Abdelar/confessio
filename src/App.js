@@ -35,7 +35,7 @@ library.add(
 
 function App() {
 	return (
-		<Router>
+		<Router basename='/confessio'>
 			<Navbar />
 			<main>
 				<div className='page'>
