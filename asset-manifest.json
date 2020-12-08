@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/confessio/static/css/main.cc4a08a7.chunk.css",
-    "main.js": "/confessio/static/js/main.f56d3a5e.chunk.js",
-    "main.js.map": "/confessio/static/js/main.f56d3a5e.chunk.js.map",
+    "main.js": "/confessio/static/js/main.0954e657.chunk.js",
+    "main.js.map": "/confessio/static/js/main.0954e657.chunk.js.map",
     "runtime-main.js": "/confessio/static/js/runtime-main.ec520d98.js",
     "runtime-main.js.map": "/confessio/static/js/runtime-main.ec520d98.js.map",
     "static/js/2.d16fde2c.chunk.js": "/confessio/static/js/2.d16fde2c.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.ec520d98.js",
     "static/js/2.d16fde2c.chunk.js",
     "static/css/main.cc4a08a7.chunk.css",
-    "static/js/main.f56d3a5e.chunk.js"
+    "static/js/main.0954e657.chunk.js"
   ]
 }
